@@ -1,12 +1,21 @@
 import org.junit.Test;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class Student_Test {
 
     @Test
     public void studentShouldBeABusinessInformaticsMajor(){
-        Student jan = new Student();
-        assertEquals(jan.getMajor(), "BusinessInformatics");
+        ArrayList coursesChosen = new ArrayList<>();
+        ArrayList attendedLectures = new ArrayList<>();
+        Course aep = new Course("aep");
+        Lecture aep20220422 = new Lecture(LocalTime.of(12,30), LocalDate.of(2022,04,22),aep);
+        Student jan = new Student("businessInformatics", "VisitingResearcher", coursesChosen, attendedLectures);
+        jan.attendLecture(aep20220422);
+        assertEquals(aep20220422, jan.attendedLectures.get(0));
     }
 }

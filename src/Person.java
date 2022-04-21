@@ -1,6 +1,6 @@
-//Understands Person without allowing to create an object
+//Understands person as an abstract class
 
 public abstract class Person {
-    String name;
-    String school;
+    private String name;
+    private String school;
 }

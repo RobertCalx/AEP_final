@@ -12,7 +12,8 @@ public class Student_Test {
     public void studentShouldBeABusinessInformaticsMajor(){
         ArrayList coursesChosen = new ArrayList<>();
         ArrayList attendedLectures = new ArrayList<>();
-        Course aep = new Course("aep");
+        ArrayList studentsInCourse = new ArrayList<>();
+        Course aep = new Course("aep", studentsInCourse);
         Lecture aep20220422 = new Lecture(LocalTime.of(12,30), LocalDate.of(2022,04,22),aep);
         Student jan = new Student("businessInformatics", "VisitingResearcher", coursesChosen, attendedLectures);
         jan.attendLecture(aep20220422);

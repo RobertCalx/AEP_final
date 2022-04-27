@@ -1,4 +1,3 @@
-import jdk.internal.icu.lang.UCharacterDirection;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;

@@ -2,6 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+// This test failed before
 public class Person_Test {
     @Test
     public  void studentAccessToLibraryShouldBeSuccesful(){

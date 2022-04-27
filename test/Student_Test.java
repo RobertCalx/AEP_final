@@ -2,11 +2,13 @@ import jdk.internal.icu.lang.UCharacterDirection;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
@@ -41,7 +43,13 @@ public class Student_Test {
     }
 
     @Test
-    public void studentAccessToLibraryShouldBeSuccesful(){
+    public void buildingReturnsCorrectRestrictionStatus(){
             Building doe = new Building("doe", BuildingRestrictionStatus.RESTRICTEDTOUNIVERSITYMEMBERS);
             assertEquals(BuildingRestrictionStatus.RESTRICTEDTOUNIVERSITYMEMBERS, doe.getBuildingRestrictionStatus());
-}}
+}
+    @Test
+    public  void studentAccessToLibraryShouldBeSuccesful(){
+        Building doe = new Building("doe", BuildingRestrictionStatus.RESTRICTEDTOUNIVERSITYMEMBERS);
+        assertEquals("Success", jan.accessBuilding(doe));
+    }
+}

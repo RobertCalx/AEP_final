@@ -1,12 +1,15 @@
-//Understands person as an abstract class
+//Understands person as a class
 
 public class Person {
-    private String name;
 
-    public void accessBuilding(Building building) {
-        if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.OPENTOTHEPUBLIC)){
-            System.out.println("Success");
-        }
-        else  System.out.println("Denied");
+    public Person (){
     }
+
+    public String accessBuilding(Building building) {
+        if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.OPENTOTHEPUBLIC))
+        {return "Success";}
+        return "Denied";
+    }
+
+
 }

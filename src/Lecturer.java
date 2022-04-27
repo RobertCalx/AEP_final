@@ -4,6 +4,7 @@ public class Lecturer extends Person{
     private ArrayList taughtCourses;
 
     public Lecturer(ArrayList taughtCourses) {
+        super();
         this.taughtCourses = taughtCourses;
     }
 

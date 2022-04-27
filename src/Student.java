@@ -11,7 +11,9 @@ public class Student extends Person{
     private HashMap <Course, Double> grades;
 
 //Constructor
-    public Student(String major,Status  status, ArrayList chosenCourses, ArrayList attendedLectures, HashMap grades) { //Use super constructor here
+    public Student(String major,Status  status, ArrayList chosenCourses, ArrayList attendedLectures, HashMap grades) {
+        super();
+        //Use super constructor here
         this.chosenCourses = chosenCourses;
         this.attendedLectures = attendedLectures;
         this.grades = new HashMap<>();
@@ -35,6 +37,14 @@ public class Student extends Person{
         double size = Double.valueOf(grades.size());
         double sum = grades.values().stream().mapToDouble(i-> i).sum();
     return sum/size;
+    }
+
+    public String accessBuilding(Building building) {
+        if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.OPENTOTHEPUBLIC))
+        return "Success";
+        else if ( building.getBuildingRestrictionStatus().equals(BuildingRestrictionStatus.RESTRICTEDTOUNIVERSITYMEMBERS))
+        return "Success";
+        return "Denied";
     }
 }
 
